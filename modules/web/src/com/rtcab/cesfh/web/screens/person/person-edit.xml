@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.rtcab.cesfh.web.screens.person">
+    <data>
+        <instance id="personDc"
+                  class="com.rtcab.cesfh.entity.Person"
+                  view="_local">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="personDc">
+            <column width="250px">
+                <lookupField id="roleField" property="role" />
+                <textField id="nameField" property="name"/>
+                <textField id="firstNameField" property="firstName"/>
+                <textField id="streetField" property="street"/>
+                <textField id="postalCodeField" property="postalCode"/>
+                <textField id="cityField" property="city"/>
+
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
